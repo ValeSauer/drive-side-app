@@ -1,30 +1,59 @@
 {
   "expo": {
-    "name": "drive-side",
-    "slug": "drive-side",
+    "name": "Drive Side",
+    "slug": "drive-side-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
+    "scheme": "driveside",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0a0a0a"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.driveside.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Drive Side nutzt deinen Standort, um das aktuelle Land und die korrekte Fahrtrichtung zu erkennen.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Drive Side nutzt deinen Standort, um das aktuelle Land und die korrekte Fahrtrichtung zu erkennen.",
+        "UIBackgroundModes": [
+          "location"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#0a0a0a"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.driveside.app",
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Drive Side nutzt deinen Standort, um das aktuelle Land und die korrekte Fahrtrichtung zu erkennen."
+        }
+      ],
+      "@sentry/react-native"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "09ba4ec3-b13d-46ce-ab5d-4f1a8d9355c7"
+      }
+    },
+    "owner": "sauermedientechnik"
   }
 }
